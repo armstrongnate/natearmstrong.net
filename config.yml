@@ -1,0 +1,10 @@
+theme: "hyde"
+title: "Nate\nArmstrong"
+
+baseURL: "/"
+
+params:
+  description: " "
+
+pygmentsStyle: "xcode"
+pygmentsUseClasses: true

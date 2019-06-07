@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Nate
+Armstrong</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Nate
+Armstrong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Jun 2019 21:07:57 -0600</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xcode 11 Diffable Data Source</title>
+      <link>/posts/xcode-11-diffable-data-source/</link>
+      <pubDate>Thu, 06 Jun 2019 21:07:57 -0600</pubDate>
+      
+      <guid>/posts/xcode-11-diffable-data-source/</guid>
+      <description>&lt;p&gt;In the Xcode 11 Beta I started seeing the following errors:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Syntax Highlighting</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Sun, 02 Jun 2019 16:54:24 -0600</pubDate>
+      
+      <guid>/posts/my-first-post/</guid>
+      <description>&lt;p&gt;A quick tutorial on how to add syntax highlighting to a &lt;a href=&#34;https://www.gohugo.io&#34;&gt;Hugo&lt;/a&gt;
+site using &lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;Chroma&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

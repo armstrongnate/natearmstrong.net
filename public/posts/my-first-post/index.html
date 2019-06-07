@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hugo Syntax Highlighting &middot; Nate
+Armstrong</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/css/styles.css">
+  <link type="text/css" rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="/"><h1>Nate
+Armstrong</h1></a>
+      <p class="lead">
+         
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about/"> About </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Hugo Syntax Highlighting</h1>
+  <time datetime=2019-06-02T16:54:24-0600 class="post-date">Sun, Jun 2, 2019</time>
+  <p>A quick tutorial on how to add syntax highlighting to a <a href="https://www.gohugo.io">Hugo</a>
+site using <a href="https://github.com/alecthomas/chroma">Chroma</a>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li>Hugo 0.28+</li>
+</ul>
+
+<h2 id="step-1-choose-a-style">Step 1. Choose a style</h2>
+
+<p>Visit the <a href="https://github.com/alecthomas/chroma">Chroma Style Gallery</a> and pick
+out the style that you prefer (Example: <code>xcode</code>).</p>
+
+<h2 id="step-2-update-config">Step 2. Update config</h2>
+
+<p>You can get syntax highlighting one of two ways: Inline css or with a stylesheet.</p>
+
+<h3 id="inline-css">Inline CSS</h3>
+
+<p>The quickest way to get syntax highlighting is to set <code>pygmentsStyle</code> to <code>true</code>
+in your <code>config.[toml|yml]</code> file.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">//<span class="w"> </span>config.toml<span class="w">
+</span><span class="w"></span>pygmentsStyle<span class="w"> </span>=<span class="w"> </span><span class="s2">&#34;xcode&#34;</span></code></pre></div>
+
+<h3 id="stylesheet">Stylesheet</h3>
+
+<p>Inline css styles can be a bit cumbersome, especially if you want to override styles.
+For this reason you might prefer to use a stylesheet for syntax styles.</p>
+
+<p>First, replace <code>pygmentsStyle</code> with <code>pygmentsUseClasses = true</code>.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">//<span class="w"> </span>config.toml<span class="w">
+</span><span class="w"></span>pyghmentsUseClasses<span class="w"> </span>=<span class="w"> </span><span class="kc">true</span></code></pre></div>
+
+<p>Then, generate the stylesheet from the command line like so:</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo gen chromastyles --style<span class="o">=</span>xcode &gt; static/css/syntax.css</code></pre></div>
+
+<p>You must then add a reference to the stylesheet, probably from a head.html
+file.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- head.html --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Site.BaseURL }}css/syntax.css&#34;</span><span class="p">&gt;</span></code></pre></div>
+
+<h2 id="step-3-using-the-syntax-highlighting">Step 3. Using the syntax highlighting</h2>
+
+<p>Wrap your code around the <code>highlight</code> shortcode passing in the desired language
+(eg <code>swift</code>).</p>
+
+<pre><code>{{% highlight swift %}}
+func sayHi() {
+  print(&quot;hello&quot;)
+}
+{{% /highlight %}}
+</code></pre>
+
+<p>Here&rsquo;s the
+<a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">full list of supported languages</a>.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://gohugo.io/content-management/syntax-highlighting/">Hugo - Syntax Highlighting</a></li>
+<li>Thanks to <a href="https://discourse.gohugo.io/t/a-way-to-mark-plain-text-and-stop-hugo-from-interpreting/1325/4">this post</a> for explaining how to escape hugo commands in markdown</li>
+</ul>
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>
